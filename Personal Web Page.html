@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sunny Sun | Personal Website</title>
+
+<style>
+:root{
+    --bg:#f4fbfc;
+    --surface:#ffffff;
+    --primary:#3f8ea3;
+    --primary-dark:#2c6e80;
+    --secondary:#9fd3dc;
+    --accent:#d8f0f3;
+    --text:#25343b;
+    --muted:#62767f;
+    --shadow:0 12px 30px rgba(0,0,0,.08);
+    --radius:18px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(180deg,#f8fdff,#edf8fa);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* ---------- NAV ---------- */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.82);
+    border-bottom:1px solid rgba(0,0,0,.06);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 22px;
+}
+
+.logo{
+    font-size:1.35rem;
+    font-weight:700;
+    color:var(--primary-dark);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:26px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    max-width:1100px;
+    margin:auto;
+    padding:120px 24px 70px;
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    color:var(--primary);
+    font-weight:600;
+    margin-bottom:22px;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:1.08rem;
+}
+
+.photo-card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:18px;
+    text-align:center;
+}
+
+.photo-wrapper{
+    width:100%;
+    aspect-ratio:1;
+    border-radius:16px;
+    overflow:hidden;
+    background:linear-gradient(135deg,var(--secondary),var(--accent));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.photo-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.placeholder{
+    color:white;
+    font-size:1.1rem;
+    font-weight:600;
+    padding:20px;
+    text-align:center;
+}
+
+/* ---------- CONTENT ---------- */
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:0 24px 70px;
+}
+
+section{
+    margin-bottom:34px;
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:34px;
+    box-shadow:var(--shadow);
+}
+
+section h2{
+    color:var(--primary-dark);
+    margin-bottom:16px;
+    font-size:1.6rem;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:18px;
+}
+
+.skill{
+    background:var(--accent);
+    color:var(--primary-dark);
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:600;
+}
+
+.contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:18px;
+}
+
+.contact-card{
+    background:var(--accent);
+    padding:16px 18px;
+    border-radius:12px;
+    flex:1;
+    min-width:250px;
+}
+
+.contact a{
+    color:var(--primary-dark);
+    text-decoration:none;
+    font-weight:600;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:var(--muted);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:820px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:2.3rem;
+}
+
+nav ul{
+gap:14px;
+font-size:.92rem;
+flex-wrap:wrap;
+justify-content:flex-end;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+<div class="logo">Sunny Sun</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#activities">Activities</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+<header class="hero">
+
+<div>
+
+<h1>Sunny Sun</h1>
+
+<h2>Aspiring Student &amp; FRC Team Vice Driver</h2>
+
+<p>
+Curious about how things work, passionate about engineering, robotics,
+and mathematics, and always excited to learn something new.
+I enjoy turning ideas into practical solutions while challenging myself
+both in the classroom and beyond.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<div class="photo-wrapper">
+<img src="photo.jpg"
+     alt="Profile Photo"
+     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="placeholder" style="display:none;">
+Profile Photo<br>
+(photo.jpg)
+</div>
+</div>
+
+</div>
+
+</header>
+
+<main>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<p>
+I'm a junior at SUIS WY High School with a strong passion for engineering,
+mathematics, and problem-solving. My interest in engineering began when I
+designed and built a prosthetic hand prototype for a class project, an
+experience that showed me how technology can improve people's lives. Since
+then, I've continued exploring robotics, programming, and applied science,
+always looking for opportunities to turn creative ideas into meaningful
+solutions.
+</p>
+
+<br>
+
+<p>
+Today, I enjoy challenging myself through hands-on engineering projects,
+team collaboration, and continuous learning. Whether I'm developing robot
+systems, solving programming problems, or studying advanced mathematics,
+I'm motivated by curiosity and the desire to make a positive impact. My
+long-term goal is to study Applied Mathematics in college and build the
+analytical skills needed to solve real-world engineering challenges.
+</p>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<p>
+My technical interests center around programming and robotics. I have
+experience using C++ to develop logical, efficient solutions to engineering
+and programming challenges. Writing code has strengthened my problem-solving
+skills and taught me the importance of designing reliable, well-structured
+systems.
+</p>
+
+<br>
+
+<p>
+Through robotics, I've gained valuable experience integrating software,
+mechanical design, and teamwork into complete engineering projects. I enjoy
+working through the entire design process—from brainstorming and testing
+ideas to refining systems through iteration. These experiences have taught
+me perseverance, adaptability, and the value of collaboration when solving
+complex technical problems.
+</p>
+
+<div class="skills">
+<div class="skill">C++ Programming</div>
+<div class="skill">Robotics</div>
+</div>
+
+</section>
+
+<section id="activities">
+
+<h2>Activities &amp; Background</h2>
+
+<p>
+Outside the classroom, I serve as Vice Driver for my school's FIRST Robotics
+Competition (FRC) team, where I contribute to both technical development and
+competition strategy. Robotics has strengthened my leadership, communication,
+and decision-making skills while teaching me how successful engineering
+depends on collaboration just as much as technical ability.
+</p>
+
+<br>
+
+<p>
+Beyond engineering, I'm a dedicated distance runner and enjoy the discipline
+and perseverance that the sport develops. I also tutor younger students in
+mathematics, helping them build confidence while reinforcing my own
+understanding of fundamental concepts. These experiences have shaped me into
+someone who enjoys learning, supporting others, and continuously striving to
+improve both academically and personally.
+</p>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact">
+
+<div class="contact-card">
+<strong>Email</strong><br>
+<a href="mailto:sunnysun0629@163.com">
+sunnysun0629@163.com
+</a>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+© <span id="year"></span> Sunny Sun • Built with HTML, CSS & JavaScript
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
